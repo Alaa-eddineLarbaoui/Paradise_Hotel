@@ -24,4 +24,13 @@ xmlns="http://java.sun.com/xml/ns/javaee"
     <url-pattern>/reservation</url-pattern>
   </servlet-mapping>
   
+  
+     <servlet>
+    <servlet-name>Reserver</servlet-name>
+    <servlet-class>com.java.servlets.Reserver</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Reserver</servlet-name>
+    <url-pattern>/Reserver</url-pattern>
+  </servlet-mapping>
   </web-app>

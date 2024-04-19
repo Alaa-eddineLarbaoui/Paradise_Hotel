@@ -13,11 +13,8 @@
 
 <div class="container mt-5">
   <h2>Add Reservation</h2>
-  <form action="" method="post">
-    <div class="form-group">
-      <label for="room_id">Room ID:</label>
-      <input type="number" class="form-control" id="room_id" name="room_id" required>
-    </div>
+  <form action="Reserver" method="post">
+    
     <div class="form-group">
       <label for="guest_name">Guest Name:</label>
       <input type="text" class="form-control" id="guest_name" name="guest_name" required>
@@ -31,6 +28,8 @@
       <input type="date" class="form-control" id="check_out_date" name="check_out_date" required>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
+     <a href="/Paradise-Hotel/Reserver" class="btn btn-primary">Reserve</a>
+  
   </form>
 </div>
 
