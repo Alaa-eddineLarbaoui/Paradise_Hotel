@@ -31,6 +31,6 @@ xmlns="http://java.sun.com/xml/ns/javaee"
   </servlet>
   <servlet-mapping>
     <servlet-name>Reserver</servlet-name>
-    <url-pattern>/Reserver</url-pattern>
+    <url-pattern>/re</url-pattern>
   </servlet-mapping>
   </web-app>

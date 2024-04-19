@@ -13,7 +13,11 @@
 
 <div class="container mt-5">
   <h2>Add Reservation</h2>
-  <form action="Reserver" method="post">
+  <form action="re" method="post">
+  <div class="form-group">
+      <label for="room_id"> room_id:</label>
+      <input type="text" class="form-control" id="room_id" name="room_id" required>
+    </div>
     
     <div class="form-group">
       <label for="guest_name">Guest Name:</label>
@@ -21,14 +25,14 @@
     </div>
     <div class="form-group">
       <label for="check_in_date">Check-in Date:</label>
-      <input type="date" class="form-control" id="check_in_date" name="check_in_date" required>
+      <input type="text" class="form-control" id="check_in_date" name="check_in_date" required>
     </div>
     <div class="form-group">
       <label for="check_out_date">Check-out Date:</label>
-      <input type="date" class="form-control" id="check_out_date" name="check_out_date" required>
+      <input type="text" class="form-control" id="check_out_date" name="check_out_date" required>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
-     <a href="/Paradise-Hotel/Reserver" class="btn btn-primary">Reserve</a>
+     
   
   </form>
 </div>

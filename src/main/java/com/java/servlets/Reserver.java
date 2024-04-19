@@ -16,7 +16,7 @@ import com.java.dao.ReservationDaoImp;
 
 
 
-@WebServlet(name = "Reserver", urlPatterns = { "/Reserver" })
+@WebServlet("/Reserver")
 public class Reserver extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -31,6 +31,7 @@ public class Reserver extends HttpServlet {
     
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 request.getRequestDispatcher("/WEB-INF/NewFile.jsp").forward(request, response);
 		
 	}
 
@@ -39,22 +40,22 @@ public class Reserver extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
-		
-		Date check_in_date=Date.valueOf(request.getParameter("guest_name"));
-        Date check_out_date=Date.valueOf(request.getParameter("check_in_date"));
-       Integer guest_name=Integer.valueOf(request.getParameter("check_out_date"));
+		Integer room_id=Integer.valueOf(request.getParameter("room_id"));
+	    String guest_name=request.getParameter("guest_name");
+		Date check_in_date=Date.valueOf(request.getParameter("check_in_date"));
+        Date check_out_date=Date.valueOf(request.getParameter("check_out_date"));
+   
 
        ReservationDaoImp reserve =new ReservationDaoImp();
 try {
-   reserve.Reserver(guest_name,check_in_date,check_out_date);
+   reserve.Reserver(room_id,guest_name,check_in_date,check_out_date);
 } catch (ClassNotFoundException e) {
 
    e.printStackTrace();
 } catch (SQLException e) {
    // TODO Auto-generated catch block 
   
-   request.getRequestDispatcher("/WEB-INF/NewFile.jsp").forward(request, response);
+
 }
 
            request.getRequestDispatcher("/WEB-INF/NewFile.jsp").forward(request, response);

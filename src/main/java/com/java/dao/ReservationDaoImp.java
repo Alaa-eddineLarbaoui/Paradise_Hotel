@@ -44,52 +44,30 @@ public class ReservationDaoImp implements ReservationDAO {
 	
 	
 	@Override
-	public void Reserver(Integer guest_name ,Date check_in_date, Date check_out_date) throws ClassNotFoundException, SQLException {
-	    String requet = "INSERT INTO Reservation (guest_name, check_in_date, check_out_date) VALUES(?,?,?)";
+	public void Reserver( Integer room_id ,String guest_name ,Date check_in_date, Date check_out_date) throws ClassNotFoundException, SQLException {
+	    String requet = "INSERT INTO Reservation (room_id , guest_name, check_in_date, check_out_date) VALUES(?,?,?,?)";
 	    PreparedStatement statement;
 
-	        statement = connection.prepareStatement(requet);
-	        statement.setDate(1,check_in_date);
-	         statement.setDate(2,check_out_date);
-	         statement.setInt(3,guest_name);
+	        statement = ConnectionDAO.getConnection().prepareStatement(requet);
+	        statement.setInt(1,room_id);
+	        statement.setString(2,guest_name);
+	        statement.setDate(3,check_in_date);
+	         statement.setDate(4,check_out_date);
+	         
 	          statement.executeUpdate();
 
-
-	           String Requet = "UPDATE room SET Disponibilite=? WHERE Id_Room=?";
-	           PreparedStatement statementt;
-	           statementt = connection.prepareStatement(Requet);
-	           statementt.setDate(1,check_out_date);
-	           statementt.setInt(2,guest_name);
-	           statementt.executeUpdate();
-
 	}
 
 
 
 
 
-	@Override
-	public void reservee() {
-		// TODO Auto-generated method stub
-		
-	}
 
 
 
 
-
-	@Override
-	public void Reserver(Reservation reservation) throws SQLException, ClassNotFoundException {
-		// TODO Auto-generated method stub
-		
-	}
 
 	
-
-
-
-
-
 }
 
 
