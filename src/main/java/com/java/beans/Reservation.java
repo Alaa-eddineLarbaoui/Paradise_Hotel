@@ -11,7 +11,13 @@ public class Reservation {
 	private Date check_out_date;
 	
 	
-	public Reservation(Integer reservation_id, Integer room_id, Integer price, String guest_name, Date check_in_date, Date check_out_date) {
+	public Reservation() {
+		super();
+	}
+
+
+	public Reservation(Integer reservation_id, Integer room_id, String guest_name, Date check_in_date,
+			Date check_out_date) {
 		super();
 		this.reservation_id = reservation_id;
 		this.room_id = room_id;
@@ -19,37 +25,58 @@ public class Reservation {
 		this.check_in_date = check_in_date;
 		this.check_out_date = check_out_date;
 	}
-	
-	public Integer getreservation_id() {
+
+
+	public Integer getReservation_id() {
 		return reservation_id;
 	}
-	public void setReservationId(Integer reservationId) {
-		this.reservation_id = reservationId;
+
+
+	public void setReservation_id(Integer reservation_id) {
+		this.reservation_id = reservation_id;
 	}
-	public Integer getroom_id() {
+
+
+	public Integer getRoom_id() {
 		return room_id;
 	}
-	public void setroom_id(Integer room_id) {
+
+
+	public void setRoom_id(Integer room_id) {
 		this.room_id = room_id;
 	}
-	public String getguest_name() {
+
+
+	public String getGuest_name() {
 		return guest_name;
 	}
-	public void setguest_name(String guest_name) {
+
+
+	public void setGuest_name(String guest_name) {
 		this.guest_name = guest_name;
 	}
-	public Date getcheck_in_date() {
+
+
+	public Date getCheck_in_date() {
 		return check_in_date;
 	}
-	public void setcheck_in_date(Date check_in_date) {
+
+
+	public void setCheck_in_date(Date check_in_date) {
 		this.check_in_date = check_in_date;
 	}
-	public Date getcheck_out_date() {
+
+
+	public Date getCheck_out_date() {
 		return check_out_date;
 	}
-	public void setcheck_out_date(Date check_out_date) {
+
+
+	public void setCheck_out_date(Date check_out_date) {
 		this.check_out_date = check_out_date;
 	}
+	
+	
 	
 	
 	

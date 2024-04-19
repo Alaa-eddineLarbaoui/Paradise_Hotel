@@ -13,4 +13,15 @@ xmlns="http://java.sun.com/xml/ns/javaee"
   </servlet-mapping>
   
   
+  
+
+   <servlet>
+    <servlet-name>CreateReservation</servlet-name>
+    <servlet-class>com.java.servlets.CreateReservation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateReservation</servlet-name>
+    <url-pattern>/reservation</url-pattern>
+  </servlet-mapping>
+  
   </web-app>

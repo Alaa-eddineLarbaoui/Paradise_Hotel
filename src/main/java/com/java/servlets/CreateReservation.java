@@ -9,42 +9,43 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.java.dao.RoomDAOImpl;
+import com.java.dao.ReservationDAO;
+import com.java.dao.ReservationDaoImp;
 
-/**
- * Servlet implementation class Affichage
- */
-@WebServlet("/Affichage")
-public class Affichage extends HttpServlet {
+
+
+@WebServlet("/CreateReservation")
+public class CreateReservation extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-   
+	ReservationDAO reservationDAO;
 	
-    public Affichage() {
+	@Override
+	public void init() throws ServletException {
+		reservationDAO = new ReservationDaoImp();
+	}
+       
+ 
+    public CreateReservation() {
         super();
-        // TODO Auto-generated constructor stub
+        // TODO Auto-genera ted constructor stub
+     
     }
 
 	
-    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	RoomDAOImpl room= new RoomDAOImpl();
+	
 	try {
-		request.setAttribute("rooms", room.getDataRoom());
+		request.setAttribute("reservation", reservationDAO.afficherReserve());
 		
 	} catch (ClassNotFoundException | SQLException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
-	request.getRequestDispatcher("/WEB-INF/Home.jsp").forward(request, response);
+	request.getRequestDispatcher("/WEB-INF/Reservation.jsp").forward(request, response);
 	}
 
-	
-	
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		request.getRequestDispatcher("/WEB-INF/Reservation.jsp").forward(request, response);
 	}
 
 }

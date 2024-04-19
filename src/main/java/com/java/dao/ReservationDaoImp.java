@@ -26,20 +26,14 @@ public class ReservationDaoImp implements ReservationDAO {
         while (resultSet.next()) {
             Integer id = (resultSet.getInt("reservation_id"));
             Integer RoomId =  (resultSet.getInt("room_id"));
-            Integer price = (resultSet.getInt("prix"));
             String Name = (resultSet.getString("guest_name"));
             Date StartDate = (resultSet.getDate("check_in_date"));
             Date FinDate = (resultSet.getDate("check_out_date"));
-            RoomsArray.add(new Reservation(id,RoomId,price,Name,StartDate,FinDate));
+            RoomsArray.add(new Reservation(id,RoomId,Name,StartDate,FinDate));
         }
-        try {
-			connection.close();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		connection.close();
+
         statement.close();
-		
 		
 		return RoomsArray;
 	}
