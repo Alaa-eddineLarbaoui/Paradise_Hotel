@@ -33,4 +33,13 @@ xmlns="http://java.sun.com/xml/ns/javaee"
     <servlet-name>Reserver</servlet-name>
     <url-pattern>/re</url-pattern>
   </servlet-mapping>
+  
+     <servlet>
+    <servlet-name>SearchRoom</servlet-name>
+    <servlet-class>com.java.servlets.SearchRoom</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchRoom</servlet-name>
+    <url-pattern>/se</url-pattern>
+  </servlet-mapping>
   </web-app>

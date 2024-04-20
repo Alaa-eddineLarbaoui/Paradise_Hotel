@@ -55,6 +55,13 @@ public class ReservationDaoImp implements ReservationDAO {
 	         statement.setDate(4,check_out_date);
 	         
 	          statement.executeUpdate();
+	          
+	         String Requet = "UPDATE Room SET Disponibilite=? WHERE room_id=?";
+	         PreparedStatement statement1;
+	         statement1 = ConnectionDAO.getConnection().prepareStatement(Requet);
+	         statement1.setInt(1, 0); 
+	         statement1.setInt(2,room_id);
+              statement1.executeUpdate();
 
 	}
 

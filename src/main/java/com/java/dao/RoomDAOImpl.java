@@ -1,10 +1,12 @@
 package com.java.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.java.beans.Room;
 
@@ -15,7 +17,7 @@ public class RoomDAOImpl implements RoomDAO{
 		ArrayList<Room> arrayRoom = new ArrayList<>();
 		
         Connection connection = ConnectionDAO.getConnection();
-        String getDataRoom = "SELECT * FROM Room";
+        String getDataRoom = "SELECT * FROM Room where Disponibilite = 1";
         PreparedStatement statement = connection.prepareStatement(getDataRoom);
         ResultSet resultSet = statement.executeQuery();
         while (resultSet.next()) {
@@ -30,4 +32,33 @@ public class RoomDAOImpl implements RoomDAO{
         statement.close();
         return arrayRoom;
 	}
-}
+
+	@Override
+	public List<Room> search(Integer capacity, String Type_Room) throws ClassNotFoundException, SQLException {
+		 List<Room> Search=new ArrayList<Room>();
+	        String requet = "SELECT * FROM Room WHERE (Disponibilite = 1) AND (capacity = ? OR Type_Room = ?) ";
+	        PreparedStatement statement = ConnectionDAO.getConnection().prepareStatement(requet);
+	        statement.setBoolean(1, true);
+	         statement.setInt(2,capacity);
+	         statement.setString(3,Type_Room);
+	        
+	  
+	        ResultSet resultat = statement.executeQuery();
+
+	        while (resultat.next()) {
+	            Integer Id = resultat.getInt("Room_Id");
+	            String Type= resultat.getString("Type_Room");
+	            Integer Prix  = resultat.getInt("prix");
+	            Integer Nombre_personne = resultat.getInt("capacity");
+	            String Disponibilite1=resultat.getString("Disponibilite");
+	         
+	          
+
+	        //    Room srRe = new Room( );
+	           // Search.add(srRe);
+	        }
+
+	        return Search;
+	    }
+	}
+

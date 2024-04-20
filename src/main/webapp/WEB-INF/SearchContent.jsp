@@ -9,21 +9,14 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<form action="se" method="Post">
-    <label for="type">Choisissez un type :</label>
-    <select name="type" id="type">
-        <option value="double">DOU</option>
-        <option value="Double">DOUB</option>
-        <option value="VIP">VIP</option>
-        <!-- Ajoutez d'autres options selon vos besoins -->
-    </select>
-    <button type="submit">Rechercher</button>
-</form>
-
+<div>
+<input type="text" class="form-control" required>
+<a href="/Paradise-Hotel/SearchRoom" class="btn btn-primary">search</a>
+</div>
 
 <div class="container mt-5">
     <div class="row">
-        <c:forEach var="room" items="${rooms}">
+        <c:forEach var="room" items="${roomsi}">
             <div class="col-md-4 mb-4">
                 <div class="card">
                     <div class="card-body">
@@ -32,7 +25,7 @@
                         <p class="card-text">Prix: ${room.getprix()}</p>
                         <p class="card-text">Capacite: ${room.getcapacity()}</p>
                         <p class="card-text">Disponibilite: ${room.getDisponibilite() == 1 ? 'Oui' : 'Non'}</p>
-                        <a href="/Paradise-Hotel/CreateReservation?Id=${room.getRoom_Id()}" class="btn btn-primary">Reserve</a>
+                        <a href="/Paradise-Hotel/?Id=${room.getRoom_Id()}" class="btn btn-primary">Reserve</a>
                     </div>
                 </div>
             </div>
