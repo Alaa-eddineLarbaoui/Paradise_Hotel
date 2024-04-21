@@ -59,7 +59,58 @@ header{
     color:white;
 
 }
+ 
+ 
+ 
+ 
+ 
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35vh;
+    
+}
 
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    top:20px;
+    height:80px;
+    background-color: rgba(255, 255, 255, 0.726);
+    backdrop-filter: blur(15px);
+    box-shadow: 4px 4px 50px black;
+}
+
+label {
+    margin-right: 10px;
+}
+
+input[type="date"],
+input[type="number"],
+select {
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+ 
 
 
 
@@ -103,31 +154,36 @@ header{
         
     </header>
 <body class="background">
-<form action="se" method="Post" >
-<div class="col-md-2 mb-2">
-                <label for="CheckIn">Check In</label>
-                <input class="form-control mt-1" type="date" id="start" name="checkIn" value="${checkIn}" min="2024-01-01" max="2030-12-31" required/>
-            </div>
-            <div class="col-md-2 mb-2 ">
-                <label for="CheckOut">Check In</label>
-                <input class="form-control mt-1" type="date" id="End" name="checkOut" value="${checkOut}" min="2024-01-01" max="2030-12-31" required/>
-            </div>
-            
-            
-    <label for="type">Choisissez un type :</label>
-    <select name="type" id="type">
-        <option value="Double">Double</option>
-        <option value="Suite de luxe">Suite de luxe</option>
-        <option value="Familiale">Familiale</option>
-        <option value="VIP">VIP</option>
-        <option value="Penthouse">Penthouse</option>
-        <option value="Chambre communicante">Chambre communicante</option>
-        <option value="Studio">Studio</option>
-        <option value="Appartement">Appartement</option>
-        <option value="Chalet">Chalet</option>
-    </select>
-    <button type="submit">Rechercher</button>
-</form>
+<div class="search">
+    <form action="se" method="Post" >
+        <div class="col-md-2 mb-2">
+                        <label for="CheckIn">Check In</label>
+                        <input class="form-control mt-1" type="date" id="start" name="checkIn" value="${checkIn}" min="2024-01-01" max="2030-12-31" required/>
+                    </div>
+                    <div class="col-md-2 mb-2 ">
+                        <label for="CheckOut">Check Out</label>
+                        <input class="form-control mt-1" type="date" id="End" name="checkOut" value="${checkOut}" min="2024-01-01" max="2030-12-31" required/>
+                    </div>
+                    
+                    
+            <label for="type">Choisissez un type :</label>
+            <select name="type" id="type">
+                <option value="Double">Double</option>
+                <option value="Suite de luxe">Suite de luxe</option>
+                <option value="Familiale">Familiale</option>
+                <option value="VIP">VIP</option>
+                <option value="Penthouse">Penthouse</option>
+                <option value="Chambre communicante">Chambre communicante</option>
+                <option value="Studio">Studio</option>
+                <option value="Appartement">Appartement</option>
+                <option value="Chalet">Chalet</option>
+            </select>
+
+            <label for="capacity">Capacité des personnes:</label>
+<input type="number" id="capacity" name="capacity">
+<button type="submit">Rechercher</button>
+        </form> 
+    </div>
 
 
 <div class="container mt-5">

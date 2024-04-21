@@ -7,12 +7,12 @@
 <title>Insert title here</title>
 <style>
     .message {
-        background-color: #d4edda; /* Couleur de fond */
-        color: #155724; /* Couleur du texte */
-        padding: 10px 15px; /* Espacement intérieur */
-        border-radius: 4px; /* Coins arrondis */
-        border: 1px solid #c3e6cb; /* Bordure */
-        margin-bottom: 20px; /* Marge en bas */
+        background-color: #d4edda;
+        color: #155724; 
+        padding: 10px 15px;  
+        border-radius: 4px;  
+        border: 1px solid #c3e6cb; 
+        margin-bottom: 20px;
     }
 </style>
 </head>

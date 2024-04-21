@@ -34,13 +34,14 @@ public class RoomDAOImpl implements RoomDAO{
 	}
 
 	@Override
-	public List<Room> search(String Type_Room) throws ClassNotFoundException, SQLException {
+	public List<Room> search(String Type_Room, String capacity) throws ClassNotFoundException, SQLException {
 		 List<Room> Search=new ArrayList<Room>();
-	        String requet = "SELECT * FROM Room WHERE Disponibilite = ? AND Type_Room = ? ";
+	        String requet = "SELECT * FROM Room WHERE Disponibilite = ? AND Type_Room = ? OR capacity = ? ";
 	        PreparedStatement statement = ConnectionDAO.getConnection().prepareStatement(requet);
 	        statement.setBoolean(1, true);
 
 	         statement.setString(2,Type_Room);
+	         statement. setString(3,capacity);
 	        
 	  
 	        ResultSet resultat = statement.executeQuery();

@@ -5,14 +5,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Liste des chambres</title>
+   <style>
+        .card {
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<div>
-<input type="text" class="form-control" required>
-<a href="/Paradise-Hotel/SearchRoom" class="btn btn-primary">search</a>
-</div>
+
 
 <div class="container mt-5">
     <div class="row">
