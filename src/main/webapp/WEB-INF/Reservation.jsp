@@ -32,8 +32,14 @@
       <label for="check_out_date">Check-out Date:</label>
       <input type="text" class="form-control" id="check_out_date" name="check_out_date" required>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-     
+   <button type="submit" class="btn btn-primary" onclick="showAlert()">Submit</button>
+    
+    <script>
+  
+  function showAlert() {
+    alert("Le room a été réservé avec succès !");
+  }
+</script>
   
   </form>
 </div>
@@ -49,7 +55,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
-    background-image: url(https://i.ibb.co/Nj95FCT/i.jpg);
+    background-image: url(https://w.forfun.com/fetch/e9/e9339a5d9f47b810ac3dc8d62f83ec3e.jpeg);
     background-repeat: no-repeat;
     background-size: cover; /* Pour ajuster la taille de l'image */
 }

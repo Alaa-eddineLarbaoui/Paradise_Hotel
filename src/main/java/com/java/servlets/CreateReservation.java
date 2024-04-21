@@ -29,22 +29,20 @@ public class CreateReservation extends HttpServlet {
  
     public CreateReservation() {
         super();
-        // TODO Auto-genera ted constructor stub
+ 
      
     }
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-	try {
-		request.setAttribute("reservation", reservationDAO.afficherReserve());
-		
-	} catch (ClassNotFoundException | SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	request.getRequestDispatcher("/WEB-INF/Reservation.jsp").forward(request, response);
-	}
+	
+			String Id = request.getParameter("Id");
+			  
+
+	      	request.setAttribute("Id", Id);
+		request.getRequestDispatcher("/WEB-INF/Reservation.jsp").forward(request, response);
+		}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		  String Id = request.getParameter("room_id");

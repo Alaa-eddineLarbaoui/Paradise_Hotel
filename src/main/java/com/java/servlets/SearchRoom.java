@@ -30,12 +30,11 @@ public class SearchRoom extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-        String Type=request.getParameter("Type_Roome");
-        Integer nbr=Integer.valueOf(request.getParameter("capacity"));
+        String Type=request.getParameter("type");
         RoomDAOImpl roomi=new RoomDAOImpl();
         
             try {
-				request.setAttribute("roomsi", roomi.search(nbr,Type));
+				request.setAttribute("roomsi", roomi.search(Type));
 			} catch (ClassNotFoundException | SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

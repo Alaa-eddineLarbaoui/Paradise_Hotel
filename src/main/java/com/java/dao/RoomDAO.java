@@ -11,7 +11,7 @@ public interface RoomDAO {
 
 	ArrayList<Room> getDataRoom() throws ClassNotFoundException, SQLException;
 
-	List<Room> search(Integer capacity, String Type_Room)
+	public List<Room> search(String Type_Room)
 			throws ClassNotFoundException, SQLException;
 
 }

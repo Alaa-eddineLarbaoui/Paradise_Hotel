@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.java.dao.ReservationDaoImp;
+import com.java.dao.RoomDAOImpl;
 
 
 
@@ -31,7 +32,7 @@ public class Reserver extends HttpServlet {
     
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 request.getRequestDispatcher("/WEB-INF/NewFile.jsp").forward(request, response);
+		 request.getRequestDispatcher("/WEB-INF/Home.jsp").forward(request, response);
 		
 	}
 
@@ -53,12 +54,18 @@ try {
 
    e.printStackTrace();
 } catch (SQLException e) {
-   // TODO Auto-generated catch block 
+  
   
 
 }
-
-           request.getRequestDispatcher("/WEB-INF/NewFile.jsp").forward(request, response);
+RoomDAOImpl room =new RoomDAOImpl();
+try {
+	request.setAttribute("rooms", room.getDataRoom());
+} catch (ClassNotFoundException | SQLException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
+           this.getServletContext().getRequestDispatcher("/WEB-INF/Home.jsp").forward(request, response);
    }
 	}
 
