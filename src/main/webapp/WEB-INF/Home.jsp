@@ -68,7 +68,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 35vh;
+    height: 30vh;
     
 }
 
@@ -97,26 +97,62 @@ select {
     border-radius: 4px;
 }
 
-button[type="submit"] {
-    padding: 10px 20px;
-    margin: 5px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
 
-button[type="submit"]:hover {
-    background-color: #0056b3;
-}
- 
+
 
 
 
 .navbar-nav{
     height: 10%;
 }
+
+
+.btn-5 {
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border-radius: 15%;
+  border: none;
+  background: rgb(255,27,0);
+  background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
+}
+
+.btn-5:hover {
+  color: black;
+  background:  rgb(205, 144, 22);
+  box-shadow:none;
+}
+
+.btn-5:before,
+.btn-5:after {
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #f0094a;
+  box-shadow:
+   -1px -1px 5px 0px #fff,
+   7px 7px 20px 0px #0003,
+   4px 4px 5px 0px #0002;
+  transition:400ms ease all;
+}
+
+.btn-5:after {
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+
+.btn-5:hover:before,
+.btn-5:hover:after {
+  width:100%;
+  transition:800ms ease all;
+}
+
     </style>
 </head>
   <header>
@@ -131,8 +167,9 @@ button[type="submit"]:hover {
                         <li class="nav-item active">
                             <a class="nav-link" href="#">Accueil</a>
                         </li>
+                        
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Chambres</a>
+                            <a class="nav-link" href="id="chambres""  >Chambres</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Services</a>
@@ -181,15 +218,15 @@ button[type="submit"]:hover {
 
             <label for="capacity">Capacité des personnes:</label>
 <input type="number" id="capacity" name="capacity">
-<button type="submit">Rechercher</button>
+<button type="submit" class="btn-5">Rechercher</button>
         </form> 
     </div>
 
 
-<div class="container mt-5">
+<div class="container mt-5" >
     <div class="row">
         <c:forEach var="room" items="${rooms}">
-            <div class="col-md-4 mb-4">
+            <div class="col-md-4 mb-4"  id="chambres">
                 <div class="card">
                      <img src="https://i.pinimg.com/originals/04/b1/33/04b1337bb8656e215f499047cc576e36.jpg" class="imgCard" alt="Image de la chambre">
                     <div class="card-body">
@@ -198,7 +235,7 @@ button[type="submit"]:hover {
                         <p class="card-text">Prix: ${room.getprix()}</p>
                         <p class="card-text">Capacite: ${room.getcapacity()}</p>
                         <p class="card-text">Disponibilite: ${room.getDisponibilite() == 1 ? 'Oui' : 'Non'}</p>
-                        <a href="/Paradise-Hotel/CreateReservation?Id=${room.getRoom_Id()}" class="btn btn-primary">Reserve</a>
+                        <a href="/Paradise-Hotel/CreateReservation?Id=${room.getRoom_Id()}" class="btn btn-warning">Reserver</a>
                     </div>
                 </div>
             </div>

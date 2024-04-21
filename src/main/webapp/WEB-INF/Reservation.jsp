@@ -55,7 +55,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
-    background-image: url(https://w.forfun.com/fetch/e9/e9339a5d9f47b810ac3dc8d62f83ec3e.jpeg);
+    background-image: url(https://media.cntraveler.com/photos/581a41656928748a1e19f06c/16:9/w_2560%2Cc_limit/Dining-BrownsHotel-London-CRHotel.jpg);
     background-repeat: no-repeat;
     background-size: cover; /* Pour ajuster la taille de l'image */
 }

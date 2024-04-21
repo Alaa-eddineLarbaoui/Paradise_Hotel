@@ -6,12 +6,45 @@
     <meta charset="UTF-8">
     <title>Liste des chambres</title>
    <style>
+   body{
+       background-image: url(https://4kwallpapers.com/images/walls/thumbs_3t/9208.png);
+       }
         .card {
             transition: transform 0.2s;
         }
 
         .card:hover {
             transform: translateY(-5px);
+            .card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; 
+}
+
+.card-text {
+    font-size: 16px;
+    color: #666; 
+}
+
+.btn-primary {
+    background-color: #8B4513;
+    border-color: #8B4513; 
+}
+
+.btn-primary:hover {
+    background-color: #A0522D;
+    border-color: #A0522D; 
+}
+
+        
         }
     </style>
     <!-- Bootstrap CSS -->
@@ -31,11 +64,12 @@
                         <p class="card-text">Prix: ${room.getprix()}</p>
                         <p class="card-text">Capacite: ${room.getcapacity()}</p>
                         <p class="card-text">Disponibilite: ${room.getDisponibilite() == 1 ? 'Oui' : 'Non'}</p>
-                        <a href="/Paradise-Hotel/?Id=${room.getRoom_Id()}" class="btn btn-primary">Reserve</a>
+                        <a href="/Paradise-Hotel/CreateReservation?Id=${room.getRoom_Id()}" class="btn btn-secondary">Reserve</a>
                     </div>
                 </div>
             </div>
         </c:forEach>
+        
     </div>
 </div>
 

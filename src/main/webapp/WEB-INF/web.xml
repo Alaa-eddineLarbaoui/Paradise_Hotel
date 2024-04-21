@@ -42,4 +42,14 @@ xmlns="http://java.sun.com/xml/ns/javaee"
     <servlet-name>SearchRoom</servlet-name>
     <url-pattern>/se</url-pattern>
   </servlet-mapping>
+  
+   
+     <servlet>
+    <servlet-name>AffichageHistory</servlet-name>
+    <servlet-class>com.java.servlets.AffichageHistory</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AffichageHistory</servlet-name>
+    <url-pattern>/his</url-pattern>
+  </servlet-mapping>
   </web-app>
